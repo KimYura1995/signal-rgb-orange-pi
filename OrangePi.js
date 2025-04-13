@@ -251,7 +251,7 @@ export function DiscoveryService() {
 							return;
 						}
 
-						if(devicedata.hasOwnProperty("product") && devicedata.product === "SRGBmods-WLC") {
+						if(devicedata.hasOwnProperty("product") && devicedata.product === "OrangePiKim") {
 							const forcedvalue = {"hostname":devicedata.hostname, "ip":devicedata.ip, "mac":devicedata.mac, "name":devicedata.name, "port":5000, "forced":true};
 							instance.Discovered(forcedvalue);
 						} else {
