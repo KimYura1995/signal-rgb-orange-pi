@@ -5,31 +5,6 @@ Item {
 		height: parent.height
 		Column {
 			width: 450
-			height: 105
-			Rectangle {
-				width: parent.width
-				height: parent.height - 10
-				color: "#333bff"
-				radius: 5
-				Column {
-					x: 10
-					y: 10
-					width: parent.width - 20
-					spacing: 0
-					Text {
-						color: theme.primarytextcolor
-						textFormat: Text.RichText
-						text: "<table><tr><td width=\"24\" style=\"text-align:center;vertical-align:middle\"><img src=\"https://raw.githubusercontent.com/SRGBmods/public/main/images/wlc/info-circle-fill.png\"></style></td><td><u><strong>Important:<strong></u><br>this service <strong>ONLY</strong> works for the DIY (do-it-yourself) micro controllers<br><strong>Raspberry Pi Pico W</strong> and <strong>Arduino Nano RP2040 Connect</strong><br><strong>flashed with <style>a:link { color: \"#FFFFFF\"; }</style><a href=\"https://srgbmods.net/wifilc\">SRGBmods Wifi LC firmware</a></strong>!</td></tr></table>"
-						onLinkActivated: Qt.openUrlExternally(link)
-						font.pixelSize: 12
-						font.family: "Poppins"
-						font.bold: false
-					}
-				}
-			}
-		}
-		Column {
-			width: 450
 			height: 115
 			Rectangle {
 				width: parent.width
@@ -43,7 +18,7 @@ Item {
 					spacing: 0
 					Text {
 						color: theme.primarytextcolor
-						text: "Discover WLC device by IP"
+						text: "Discover device by IP"
 						font.pixelSize: 16
 						font.family: "Poppins"
 						font.bold: true
@@ -54,7 +29,7 @@ Item {
 							x: 10
 							y: 10
 							height: 40				
-							source: "https://raw.githubusercontent.com/SRGBmods/public/main/images/wlc/wlc-service.png"
+							source: "https://github.com/KimYura1995/signal-rgb-orange-pi/blob/main/orange-pi.png?raw=true"
 							fillMode: Image.PreserveAspectFit
 							antialiasing: true
 							mipmap: true
@@ -101,23 +76,8 @@ Item {
 					}
 				}
 				Column {
-					x: 260
-					y: 4
-					width: parent.width - 20
-					spacing: 10
-					Image {
-						x: 20
-						y: 10
-						height: 40				
-						source: "https://raw.githubusercontent.com/SRGBmods/public/main/images/wlc/wlc-logo_mono.png"
-						fillMode: Image.PreserveAspectFit
-						antialiasing: true
-						mipmap: true
-					}
-				}
-				Column {
 					x: 285
-					y: 60
+					y: 45
 					width: parent.width - 20
 					spacing: 10
 					Item{

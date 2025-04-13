@@ -177,21 +177,17 @@ export function ImageUrl() {
 
 
 export function DiscoveryService() {
-	this.IconUrl = "https://assets.signalrgb.com/brands/srgbmods/logo.jpg";
-
-	this.MDns = [ "_srgbmods-wlc._tcp.local." ];
-
+	this.IconUrl = "https://github.com/KimYura1995/signal-rgb-orange-pi/blob/main/orange-pi.png?raw=true";
 	this.forceDiscover = function(ipaddress) {
 		if(!ipaddress || ipaddress === undefined) {
 
 		} else if (this.isValidIP(ipaddress)) {
-			service.log("Forcing Discovery for WLC device at IP: " + ipaddress);
+			service.log("Forcing Discovery IP: " + ipaddress);
 			this.ip = ipaddress;
-			this.port = 80;
+			this.port = 5000;
 			this.forced = true;
 			this.offline = false;
 			this.prepareDiscovery(false);
-
 		} else {
 
 		}
@@ -215,7 +211,9 @@ export function DiscoveryService() {
 				service.saveSetting("forcedDiscovery", "devicelist", devicelist_string);
 				this.ip = ipaddress;
 				this.mac = macAddress;
-				this.port = 80;
+				this.port = 5000;
+
+				service.log("Force Deleting WLC device at PORT: " + this.port);
 				this.forced = true;
 				this.prepareDiscovery(true);
 
