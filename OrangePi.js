@@ -252,8 +252,7 @@ export function DiscoveryService() {
 						}
 
 						if(devicedata.hasOwnProperty("product") && devicedata.product === "SRGBmods-WLC") {
-							const hostname = devicedata.name + ".local";
-							const forcedvalue = {"hostname":hostname, "ip":devicedata.ip, "mac":devicedata.mac, "name":devicedata.name, "port":80, "forced":true};
+							const forcedvalue = {"hostname":devicedata.hostname, "ip":devicedata.ip, "mac":devicedata.mac, "name":devicedata.name, "port":5000, "forced":true};
 							instance.Discovered(forcedvalue);
 						} else {
 							service.log("ERROR for IP " + instance.ip + ", device is NOT an SRGBmods Wifi LC!");
