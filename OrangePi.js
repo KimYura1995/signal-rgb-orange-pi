@@ -1,4 +1,4 @@
-export function Name() { return "SRGBmods-WLC"; }
+export function Name() { return "OrangePi"; }
 export function Version() { return "0.2.0"; }
 export function Type() { return "network"; }
 export function Publisher() { return "FeuerSturm"; }
