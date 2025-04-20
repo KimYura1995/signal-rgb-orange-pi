@@ -125,18 +125,10 @@ class WLCDevice {
 			dataArray.push(device.color(CurrPosX, 0));
 		}
 
-		let flatArray = [];
-		for(let row of dataArray) {
-    		flatArray.push(...row);
-		}
-
-		let uint8Array = new Uint8Array(flatArray);
-
- 		device.log(uint8Array);
 		device.log(this.ip);
 		device.log(this.streamingPort);
 
-		udp.send(this.ip, this.streamingPort, uint8Array, BIG_ENDIAN);
+		udp.send(this.ip, this.streamingPort, dataArray, BIG_ENDIAN);
 	}
 }
 
