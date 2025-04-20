@@ -46,7 +46,7 @@ let lastForcedUpdate = 0;
 let lastHWLchange = 0;
 let HWLupdateRequested = false;
 
-class WLCDevice {
+class OrangePiDevice {
 	constructor(controller) {
 		this.mac = controller.mac;
 		this.hostname = controller.hostname;
@@ -124,12 +124,14 @@ export function Initialize() {
 	device.setName(controller.name);
 	device.setImageFromBase64(WLCicon);
 	device.addFeature("udp");
-	WLC = new WLCDevice(controller);
+	WLC = new OrangePiDevice(controller);
 	WLC.SetupChannel();
 	WLC.AutoTurnOn();
 }
 
 export function Render() {
+	service.log(forcedColor);
+
 	WLC.SendColorPackets();
 
 	if(HWLupdateRequested == true) {
