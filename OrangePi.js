@@ -133,7 +133,7 @@ export function Render() {
 	packet = [];
 	for (let i = 0, i < 2; i++) {
 		packet[] = device.color(i, 0);
-		Buffer.from(packet.flat());
+		//Buffer.from(packet.flat());
 	}
 
 	udp.send(this.ip, this.streamingPort, packet, BIG_ENDIAN);
