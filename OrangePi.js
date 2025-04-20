@@ -121,8 +121,16 @@ class WLCDevice {
 
 	SendTestData() {
 		let dataArray = [];
+		let color = [0, 0, 0];
 		for(let CurrPosX = 0; CurrPosX < 2; CurrPosX++) {
-			dataArray.push(device.color(CurrPosX, 0));
+			let color = device.color(CurrPosX, 0);
+			dataArray = [
+				CurrPosX === 0 ? 1 : 0,
+				CurrPosX === 1 ? 1 : 0,
+				color[0],
+				color[1],
+				color[2],
+			];
 		}
 
 		device.log(this.ip);
