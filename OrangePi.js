@@ -3,7 +3,7 @@ export function Version() { return "0.2.0"; }
 export function Type() { return "network"; }
 export function Publisher() { return "FeuerSturm"; }
 export function Documentation() { return "gettingstarted/srgbmods-net-info"; }
-export function Size() { return [1, 1]; }
+export function Size() { return [2, 0]; }
 export function DefaultPosition(){return [0, 0]; }
 export function DefaultScale(){return 1.0; }
 export function SubdeviceController(){ return true; }
