@@ -130,8 +130,9 @@ export function Initialize() {
 }
 
 export function Render() {
-	for(let CurrPacket = 0; CurrPacket < 2; CurrPacket++) {
-		device.log(CurrPacket);
+	for(let CurrPosX = 0; CurrPosX < 2; CurrPosX++) {
+		device.log(CurrPosX);
+		device.log(device.color(CurrPosX, 0));
 	}
  //device.log(packet);
 
