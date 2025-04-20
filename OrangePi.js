@@ -128,9 +128,7 @@ class WLCDevice {
 				color[1],
 				color[0],
 				color[2],
-			]
-
-
+			];
 		}
 
 		dataArray = dataArray.flat();
