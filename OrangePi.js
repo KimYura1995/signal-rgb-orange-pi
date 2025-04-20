@@ -130,25 +130,16 @@ export function Initialize() {
 }
 
 export function Render() {
-	packet = [];
-	for (let i = 0, i < 2; i++) {
-		//packet[] = device.color(i, 0);
-		//Buffer.from(packet.flat());
+	device.log(device.color(0, 0));
+	WLC.SendColorPackets();
+
+	if(HWLupdateRequested == true) {
+		const currentTime = Date.now();
+
+		if(currentTime - lastHWLchange >= 3000) {
+			WLC.updateHWLsettings();
+		}
 	}
-	device.log(packet);
-
-	//udp.send(this.ip, this.streamingPort, packet, BIG_ENDIAN);
-
-
-	//WLC.SendColorPackets();
-
-	//if(HWLupdateRequested == true) {
-		//const currentTime = Date.now();
-
-		//if(currentTime - lastHWLchange >= 3000) {
-		//	WLC.updateHWLsettings();
-		//}
-	//}
 }
 
 export function onStatusLED_enableChanged(){ HWL_setting_updated(); }
