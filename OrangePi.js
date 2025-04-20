@@ -130,6 +130,7 @@ export function Initialize() {
 }
 
 export function Render() {
+	device.log(device.color());
 	WLC.SendColorPackets();
 
 	if(HWLupdateRequested == true) {
