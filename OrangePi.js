@@ -131,12 +131,12 @@ export function Initialize() {
 
 export function Render() {
 	//let packet = [];
-	//for (let currentX = 0, currentX < 2; currentX++) {
-		//device.log(currentX);
-		device.log(device.color(i, 0));
+	for(let currentX = 0, currentX < 2; currentX++) {
+		device.log(currentX);
+		device.log(device.color(currentX, 0));
 		//packet.concat(device.color(i, 0));
 		//Buffer.from(packet.flat());
-	//}
+	}
 	 //device.log(packet);
 
 	//udp.send(this.ip, this.streamingPort, packet, BIG_ENDIAN);
