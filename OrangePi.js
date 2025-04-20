@@ -131,8 +131,9 @@ export function Initialize() {
 
 export function Render() {
 	//let packet = [];
-	for (let i = 0, i < 2; i++) {
-		device.log(device.color(i, 0));
+	for (let currentX = 0, currentX < 2; currentX++) {
+		device.log(currentX);
+		//device.log(device.color(i, 0));
 		//packet.concat(device.color(i, 0));
 		//Buffer.from(packet.flat());
 	}
