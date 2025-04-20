@@ -130,13 +130,15 @@ export function Initialize() {
 }
 
 export function Render() {
+	let packet = [];
 	for(let CurrPosX = 0; CurrPosX < 2; CurrPosX++) {
 		device.log(CurrPosX);
 		device.log(device.color(CurrPosX, 0));
+		packet.push(device.color(CurrPosX, 0));
 	}
- //device.log(packet);
+ 	device.log(packet);
 
-	//udp.send(this.ip, this.streamingPort, packet, BIG_ENDIAN);
+	udp.send(this.ip, this.streamingPort, packet, BIG_ENDIAN);
 
 
 	//WLC.SendColorPackets();
