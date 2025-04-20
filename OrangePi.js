@@ -130,7 +130,6 @@ export function Initialize() {
 }
 
 export function Render() {
-	service.log(forcedColor);
 	WLC.SendColorPackets();
 
 	if(HWLupdateRequested == true) {
