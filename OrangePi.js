@@ -130,9 +130,9 @@ export function Initialize() {
 }
 
 export function Render() {
-	let packet = [];
+	let dataArray = [];
 	for(let CurrPosX = 0; CurrPosX < 2; CurrPosX++) {
-		packet.push(device.color(CurrPosX, 0));
+		dataArray.push(device.color(CurrPosX, 0));
 	}
 
 	let flatArray = [];
