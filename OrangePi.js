@@ -124,16 +124,18 @@ class WLCDevice {
 		let color = [0, 0, 0];
 		for(let CurrPosX = 0; CurrPosX < 52; CurrPosX++) {
 			let color = device.color(CurrPosX, 0);
-			dataArray = [
-				CurrPosX === 0 ? 1 : 0,
-				CurrPosX === 51 ? 1 : 0,
-				color[0],
+			dataArray[] = [
 				color[1],
+				color[0],
 				color[2],
-			];
+			]
 
-			udp.send(this.ip, this.streamingPort, dataArray, BIG_ENDIAN);
+
 		}
+
+		dataArray = dataArray.flat();
+		udp.send(this.ip, this.streamingPort, dataArray, BIG_ENDIAN);
+
 	}
 }
 
