@@ -130,9 +130,10 @@ export function Initialize() {
 }
 
 export function Render() {
-	let packet = [];
+	//let packet = [];
 	for (let i = 0, i < 2; i++) {
-		packet.concat(device.color(i, 0));
+		device.log(packet);
+		//packet.concat(device.color(i, 0));
 		//Buffer.from(packet.flat());
 	}
 	 device.log(packet);
