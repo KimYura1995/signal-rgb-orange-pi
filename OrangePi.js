@@ -126,7 +126,7 @@ class WLCDevice {
 			let color = device.color(CurrPosX, 0);
 			dataArray = [
 				CurrPosX === 0 ? 1 : 0,
-				CurrPosX === 1 ? 1 : 0,
+				CurrPosX === 51 ? 1 : 0,
 				color[0],
 				color[1],
 				color[2],
