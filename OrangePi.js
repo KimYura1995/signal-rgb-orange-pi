@@ -118,6 +118,26 @@ class WLCDevice {
 			udp.send(this.ip, this.streamingPort, packet, BIG_ENDIAN);
 		}
 	}
+
+	SendTestData() {
+		let dataArray = [];
+		for(let CurrPosX = 0; CurrPosX < 2; CurrPosX++) {
+			dataArray.push(device.color(CurrPosX, 0));
+		}
+
+		let flatArray = [];
+		for(let row of dataArray) {
+    		flatArray.push(...row);
+		}
+
+		let uint8Array = new Uint8Array(flatArray);
+
+ 		device.log(uint8Array);
+		device.log(this.ip);
+		device.log(this.streamingPort);
+
+		udp.send(this.ip, this.streamingPort, uint8Array, BIG_ENDIAN);
+	}
 }
 
 export function Initialize() {
@@ -130,27 +150,7 @@ export function Initialize() {
 }
 
 export function Render() {
-	let dataArray = [];
-	for(let CurrPosX = 0; CurrPosX < 2; CurrPosX++) {
-		dataArray.push(device.color(CurrPosX, 0));
-	}
-
-	let flatArray = [];
-	for(let row of dataArray) {
-    	flatArray.push(...row);
-	}
-
-	let uint8Array = new Uint8Array(flatArray);
-
- 	device.log(uint8Array);
-device.log(this.ip);
-device.log(this.streamingPort);
-
-
-	udp.send(this.ip, this.streamingPort, uint8Array, BIG_ENDIAN);
-
-
-	//WLC.SendColorPackets();
+	WLC.SendTestData();
 
 	//if(HWLupdateRequested == true) {
 		//const currentTime = Date.now();
