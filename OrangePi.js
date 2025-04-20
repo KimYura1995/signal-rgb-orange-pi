@@ -136,9 +136,11 @@ export function Render() {
 		device.log(device.color(CurrPosX, 0));
 		packet.push(device.color(CurrPosX, 0));
 	}
- 	device.log(packet);
 
-	udp.send(this.ip, this.streamingPort, packet, BIG_ENDIAN);
+ 	device.log(packet);
+ 	let bufferData = Buffer.from(packet.flat());
+
+	udp.send(this.ip, this.streamingPort, bufferData, BIG_ENDIAN);
 
 
 	//WLC.SendColorPackets();
