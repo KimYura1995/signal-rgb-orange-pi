@@ -132,15 +132,19 @@ export function Initialize() {
 export function Render() {
 	let packet = [];
 	for(let CurrPosX = 0; CurrPosX < 2; CurrPosX++) {
-		device.log(CurrPosX);
-		device.log(device.color(CurrPosX, 0));
 		packet.push(device.color(CurrPosX, 0));
 	}
 
- 	device.log(packet);
- 	let bufferData = Buffer.from(packet.flat());
+	let flatArray = [];
+	for(let row of dataArray) {
+    	flatArray.push(...row);
+	}
 
-	udp.send(this.ip, this.streamingPort, bufferData, BIG_ENDIAN);
+	let uint8Array = new Uint8Array(flatArray);
+
+ 	device.log(uint8Array);
+
+	udp.send(this.ip, this.streamingPort, uint8Array, BIG_ENDIAN);
 
 
 	//WLC.SendColorPackets();
