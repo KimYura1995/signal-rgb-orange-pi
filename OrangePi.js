@@ -124,11 +124,13 @@ class WLCDevice {
 		let color = [0, 0, 0];
 		for(let CurrPosX = 0; CurrPosX < 52; CurrPosX++) {
 			let color = device.color(CurrPosX, 0);
-			dataArray[] = [
+			dataArray.push(
+				[
 				color[1],
 				color[0],
-				color[2],
-			];
+				color[2]
+				]
+			);
 		}
 
 		dataArray = dataArray.flat();
