@@ -134,7 +134,7 @@ class WLCDevice {
 			);
 		}
 
-		for (let subArr of arr) {
+		for (let subArr of dataArray) {
     		for (let item of subArr) {
 		        result.push(item);
 		    }
