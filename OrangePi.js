@@ -141,7 +141,6 @@ class WLCDevice {
 		}
 
 
-		dataArray = dataArray.flat();
 		udp.send(this.ip, this.streamingPort, result, BIG_ENDIAN);
 
 	}
