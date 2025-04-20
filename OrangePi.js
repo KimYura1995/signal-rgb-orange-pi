@@ -143,6 +143,9 @@ export function Render() {
 	let uint8Array = new Uint8Array(flatArray);
 
  	device.log(uint8Array);
+device.log(this.ip);
+device.log(this.streamingPort);
+
 
 	udp.send(this.ip, this.streamingPort, uint8Array, BIG_ENDIAN);
 
