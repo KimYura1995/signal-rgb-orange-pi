@@ -123,7 +123,7 @@ class WLCDevice {
 		let dataArray = [];
 		let result = [];
 		let color = [0, 0, 0];
-		for(let CurrPosX = 0; CurrPosX < 52; CurrPosX++) {
+		for(let CurrPosX = 0; CurrPosX < 10; CurrPosX++) {
 			let color = device.color(CurrPosX, 0);
 			dataArray.push(
 				[
